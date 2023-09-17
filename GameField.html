@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>SAPPER</title>
+		<link rel="stylesheet" href="assets/css/GameStyle.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	
+	<body>
+		<div id="gameApp">
+			<div>
+				<audio id="BackgroundMusic" loop></audio>
+				
+				<audio id="clickOnButton" src="assets/mediaFiles/audio/effects/ClickOnButton.mp3"></audio>
+				
+				<audio id="digSound1" src="assets/mediaFiles/audio/effects/DigingSound.mp3"></audio>
+				<audio id="digSound2" src="assets/mediaFiles/audio/effects/DigingSound2.mp3"></audio>
+				
+				<audio id="flagSound1" src="assets/mediaFiles/audio/effects/Flag1.mp3"></audio>
+				<audio id="flagSound2" src="assets/mediaFiles/audio/effects/Flag2.mp3"></audio>
+				
+				<audio id="BassBoost" src="assets/mediaFiles/audio/effects/BassBoost.mp3"></audio>
+				<audio id="Boom" src="assets/mediaFiles/audio/effects/Boom.mp3"></audio>
+			</div>
+			
+			<div class="UIElements">
+				<button @click="GoToMenu" class="GameButton">домой</button>
+				
+				<div class="BombContainer">
+					<div class="GameTimer">время</div>
+				</div>
+				
+				<div class="FlagsCounter">{{flagsCount}}<img src="assets/mediaFiles/images/flags/redFlag2.png"></div>
+				
+				<button @click="RestartGame" class="GameButton">заново</button>
+			</div>
+	
+			<div class="GameFieldContainer">
+				<div class="GameField"></div>
+			</div>
+		</div>
+	</body>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+	<script src="assets/js/GameScript.js"></script>
+</html>

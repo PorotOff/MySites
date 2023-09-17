@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Saper Ultra Game</title>
+		<link rel="stylesheet" href="assets/css/MainMenuStyle.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<div id="menuApp" class="MenuContainer">
+			<div class="Menu">
+				<div class="InputGameFieldSize">
+					<div class="SizeInputField">
+						<input @input="SetCustomInSelect" type="number" id="WidthInputField" v-model="widthGameField" :style="{color: inputFieldTextColor}">
+						
+						<div>ширина</div>
+					</div>
+					
+					<div class="SizeInputField">
+						<input  @input="SetCustomInSelect" type="number" id="HeightInputField" v-model="heightGameField" :style="{color: inputFieldTextColor}">
+						
+						<div>высота</div>
+					</div>
+				</div>
+				
+				<div class="ChoiseOf">
+					<select @change="ChangeFieldSize" v-model="selectedFieldSize" id="FieldSizeDropdown" class="Dropdown" >
+						<option value="small">маленькое поле</option>
+						<option value="medium">среднее поле</option>
+						<option value="large">большое поле</option>
+						<option value="custom">кастомное поле</option>
+					</select>
+					
+					<div class="UnderLine"></div>
+				</div>
+				
+				<div class="ChoiseOf">
+					<select @change="ChangeDifficult" v-model="difficulty" id="DifficultiesDropdown" class="Dropdown">
+						<option value="easy">лёгкий</option>
+						<option value="hard">сложный</option>
+						<option value="impossible">невозможный</option>
+					</select>
+					
+					<div class="UnderLine"></div>
+				</div>
+
+				<audio id="clickOnButton" src="assets/mediaFiles/audio/effects/ClickOnButton.mp3"></audio>
+	
+				<button @click="StartGame" class="StartGameButton">
+					<label>{{textOnStartGameButton}}</label>
+
+					<audio id="LargeFieldSizeError" src="assets/mediaFiles/audio/effects/yameteKudasaiAhh.mp3"></audio>
+				</button>
+			</div>
+		</div>
+	</body>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+	<script type="module" src="assets/js/MenuScript.js"></script>
+</html>
